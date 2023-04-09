@@ -7,6 +7,7 @@ export default function ModalMovie(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let image=props.movie.poster_path;
 
   return (
     <>
@@ -18,9 +19,11 @@ export default function ModalMovie(props) {
         <Modal.Header closeButton>
           <Modal.Title>{props.movie.title}</Modal.Title>
         </Modal.Header>
+        <img src={`https://image.tmdb.org/t/p/original${image}`}/>
         <Modal.Body>
+  
         {props.movie.release_date}
-        {props.movie.poster_path}
+        
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
