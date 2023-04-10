@@ -13,6 +13,17 @@ export default function Home() {
 
     }
 
+    function commentHandler(newMovies,id){
+        movies.map(movie=>{
+            if(movie.id===id){
+                movie.comment=newMovies.userComment
+                return movie;
+            }else{
+                return movie;
+            }
+        })
+    }
+
     useEffect(() => {
         getMovies();
     }, []);
@@ -21,7 +32,9 @@ export default function Home() {
     return (
         <>
             <h1>This home page</h1>
-            <MovieList movies={movies} />
+            <br/>
+            <br/>
+            <MovieList movies={movies} commentHandler={commentHandler}/>
         </>
 
     )

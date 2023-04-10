@@ -12,7 +12,7 @@ export default function Movie(props){
             <Card.Text>
             {props.movie.overview}
             </Card.Text>
-            <Button variant="primary"><ModalMovie movie={props.movie}/></Button>
+            <Button variant="primary"><ModalMovie movie={props.movie} commentHandler={props.commentHandler} /></Button>
           </Card.Body>
         </Card>
       );
